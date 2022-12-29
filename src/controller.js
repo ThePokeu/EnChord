@@ -15,7 +15,7 @@ export class Controller {
 
     this.#eventsManager.subscribe('gameStart', (data) => {
       this.#view.renderQuestionPage();
-      this.#model.getNewQuiz(data);
+      this.#model.getNewQuestion(data);
     });
 
     this.#eventsManager.subscribe('newQuestion', (data) => {
@@ -32,7 +32,7 @@ export class Controller {
 
     this.#eventsManager.subscribe('newAnswer', (data) => {
       this.#model.saveUserAnswer(data);
-      this.#model.getNewQuiz();
+      this.#model.getNewQuestion();
     });
 
     this.#eventsManager.subscribe('gameEnd', (data) => {
